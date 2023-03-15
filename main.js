@@ -20,7 +20,14 @@ const getFormData = async (e) => {
     }
 
     console.log(weatherData);
+    document.getElementById('sky').innerHTML = 'The skies are currently: ' + weatherData.sky;
+    document.getElementById('currentTemp').innerHTML = 'The temperature is currently ' + weatherData.current_temp + '° fahrenheit';
+    document.getElementById('maxTemp').innerHTML =  "Today's high looks to be " + weatherData.max_temp + '° fahrenheit';
+    document.getElementById('minTemp').innerHTML =  "Today's low looks to be " + weatherData.min_temp + '° fahrenheit';
+    document.getElementById('humidity').innerHTML =  "The current humidity is " + weatherData.humidity;
 };
 
 const myForm = document.getElementById('myForm');
-myForm.addEventListener('submit', getFormData)
+myForm.addEventListener('submit', getFormData);
+
+// document.getElementById('sky').innerHTML = 'The skies are currently ' + weatherData.sky;
